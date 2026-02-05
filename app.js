@@ -4,7 +4,7 @@ import {fileURLToPath} from 'url';
 import mysql from 'mysql2';
 import { error } from 'console';
 import { insertUser } from './models/mydataSchema.js';
-
+import { ReadData } from './models/mydataSchema.js';
 // import mongoose from 'mongoose';
 
 
@@ -37,7 +37,7 @@ app.get("/",(req,res)=>{
     console.log(result);
 
     res.render("home",{
-      username:result
+      username:result[0].userName
     })
   })
    
