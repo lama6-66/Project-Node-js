@@ -31,11 +31,18 @@ connection.connect((error)=>{
 });
 
 app.get("/",(req,res)=>{
+
+  ReadData(connection,(err, result)=>{
+    if (err) throw err;
+    console.log(result);
+
+    res.render("home",{
+      username:result
+    })
+  })
    
   // res.sendFile('./views/home.html',{root:__dirname});
-  res.render("home",{
-    mytitle:"Home Page"
-  });
+  
 })
  
 
