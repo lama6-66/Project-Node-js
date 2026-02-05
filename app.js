@@ -3,12 +3,16 @@ import {dirname} from 'path';
 import {fileURLToPath} from 'url';
 import mysql from 'mysql2';
 import { error } from 'console';
+import { insertUser } from './models/mydataSchema.js';
+
 // import mongoose from 'mongoose';
 
 
 const app=express();
 const __dirname=dirname(fileURLToPath(import.meta.url));
 
+app.use(express.urlencoded({extended:true}));
+app.set('view engine','ejs');
 
 
 var connection = mysql.createConnection({
@@ -28,17 +32,34 @@ connection.connect((error)=>{
 
 app.get("/",(req,res)=>{
    
-  res.sendFile('./views/home.html',{root:__dirname});
-
+  // res.sendFile('./views/home.html',{root:__dirname});
+  res.render("home",{
+    mytitle:"Home Page"
+  });
 })
  
+
+app.post("/post",(req,res)=>{
+  console.log("im here");
+  const name=req.body.name;
+
+  insertUser(connection,name,(err,result)=>{
+    if(err) {
+      console.log(err);
+      throw err;
+    }
+    console.log("1 record inserted");
+    res.send("User added successfully");
+  });
+})
+
 
 app.listen(3000,()=>{
     console.log("server is running on http://localhost:3000");
 })
 
 
-connection.end();
+// connection.end();
 
 
 // mongoose.connect(
