@@ -5,14 +5,18 @@ import mysql from 'mysql2';
 import { error } from 'console';
 import { insertUser } from './models/mydataSchema.js';
 import { ReadData } from './models/mydataSchema.js';
-// import mongoose from 'mongoose';
 
 
 const app=express();
 const __dirname=dirname(fileURLToPath(import.meta.url));
 
+
 app.use(express.urlencoded({extended:true}));
 app.set('view engine','ejs');
+app.use(express.static("public"))
+
+
+
 
 
 var connection = mysql.createConnection({
