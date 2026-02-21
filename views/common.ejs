@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
@@ -96,7 +95,7 @@
       }
     </style>
   </head>
-  <body>
+<body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path
@@ -214,7 +213,7 @@
         </a>
         <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
           <li class="nav-item">
-            <a href="#" class="nav-link active py-3 border-bottom rounded-0"
+            <a href="/" class="nav-link active py-3 border-bottom rounded-0"
               aria-current="page" title="Home" data-bs-toggle="tooltip"
               data-bs-placement="right">
               <svg class="bi pe-none" width="24" height="24" role="img"
@@ -224,7 +223,7 @@
             </a>
           </li>
           <li >
-            <a href="#" class="nav-link py-3 border-bottom rounded-0"
+            <a href="/AddUser" class="nav-link py-3 border-bottom rounded-0"
               title="Add User" data-bs-toggle="tooltip"
               data-bs-placement="right">
               <!-- <svg class="bi pe-none" width="24" height="24" role="img"
@@ -234,6 +233,14 @@
               <i class="bi bi-person-add " style="font-size: 30px;"></i>
             </a>
           </li>
+ <li>
+            <a href="/Edit" class="nav-link py-3 border-bottom rounded-0"
+              title="Products" data-bs-toggle="tooltip"
+              data-bs-placement="right">
+             <i class="bi bi-pencil" style="font-size: 30px;"></i>
+            </a>
+          </li>
+
           <!-- <li>
             <a href="#" class="nav-link py-3 border-bottom rounded-0"
               title="Orders" data-bs-toggle="tooltip" data-bs-placement="right">
@@ -301,42 +308,13 @@
             </form>
           </div>
         </nav>
-
-        <table style="width: 95%;"
-          class="mt-5 mx-auto  table table-dark table-striped  table-bordered border-primary text-center  ">
-          <thead>
-            <tr >
-              <th scope="col">#</th>
-              <th scope="col">Full Name</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Country</th>
-              <th scope="col">Age</th>
-              <th scope="col">Last Updated</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>
-                <div
-                  class="d-flex justify-content-center align-items-center gap-2">
-                  <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip" ><i class="bi bi-arrows-fullscreen" ></i></a>
-                  <a href=""><i class="bi bi-pencil"></i></a>
-                  <button  type="button" class="btn p-0 border-0 "><i
-                      class="bi bi-person-x text-danger"></i></button>
-                </div>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
+<!-- 
+        <div class="container mt-3">
+          
+        </div>
+       
+      </div> -->
+<%- include(body, { countries: typeof countries !== 'undefined' ? countries : [] }) %>
 
     </main>
     <script src="../public/bootstrap.bundle.min.js"
@@ -345,5 +323,4 @@
       class="astro-vvvwv3sm"></script>
 
   </body>
-
 </html>

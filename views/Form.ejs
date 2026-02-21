@@ -1,0 +1,84 @@
+<form method="post" action="/AddUser" class="mt-5 border border-primary p-4" style="width: 95%; margin: 0 auto;">
+
+<div class="row mb-3">
+  <div class="col">
+    <h6>First Name :</h6>
+    <input name="FirstName" type="text" class="form-control" placeholder="Lama" aria-label="First name">
+  </div>
+  <div class="col">
+    <h6>Last Name :</h6>
+    <input name="LastName" type="text" class="form-control" placeholder="safar" aria-label="Last name">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h6>Email :</h6>
+    <input name="Email" type="email" class="form-control" placeholder="abc@gmai.com" aria-label="email">
+  </div>
+  <div class="col">
+    <h6>Mobile Number :</h6>
+    <input name="MobileNumber" type="tel" pattern="05[0-9]{8}" maxlength="10" required class="form-control" placeholder="+966" aria-label="Mobile Number">
+  </div>
+  
+</div>
+
+<div class="row mt-3">
+<div class="col-md-6" >
+<h6 class="mt-2">Age :</h6>
+<select name="Age" class="form-select mt-3" id="AgeNumber">
+    
+  <option selected disabled>Choose...</option>
+  
+  <% for (let index = 18; index <= 60; index++) { %>
+    <option value="<%= index %>"><%= index %></option>
+  <% } %>
+
+</select>
+
+<h6 class="mt-2">Country :</h6>
+<select name="country" class="form-select mt-3" id="CountrySelect">
+    <option selected disabled>Choose Country...</option>
+    
+    <% countries.forEach(function(name) { %>
+        <option value="<%= name %>"><%= name %></option>
+    <% }); %>
+</select>
+
+<h6 class="mt-2">Gender :</h6>
+<select name="Gender" class="form-select mt-3" id="AgeNumber">
+    
+  <option selected disabled>Choose...</option>
+   <option value="Female">Female</option>
+    <option value="Male">Male</option>
+ 
+
+</select>
+</div>
+
+<div class="col-md-6 mt-3">
+        <div class="card shadow-sm p-3 bg-danger-subtle border-danger-subtle ">
+      <h6 class="text-primary">Instructions</h6>
+      <ul class="small">
+        <li>Use official work email only</li>
+        <li>Mobile number must start with 05</li>
+        <li>Age must be between 18–60</li>
+        <li>All fields are required</li>
+      </ul>
+    </div>
+
+  </div>
+    </div>
+
+    <div class="mt-3">
+  <% if (isEdit) { %>
+    <button type="submit" class="btn btn-primary">Update changes</button>
+    <button type="button" class="btn btn-danger ">Delete user</button>
+  <% } else { %>
+    <button type="submit" class="btn btn-outline-primary ">Submit</button>
+  <% } %>
+</div>
+
+</div>
+
+</form>

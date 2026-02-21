@@ -4,14 +4,15 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-  "start": "node app.js",
-  "dev": "browser-sync start --proxy http://localhost:3000 --files 'public/**/*, views/**/*.ejs'"
-},
+    "start": "node app.js",
+    "dev": "browser-sync start --proxy http://localhost:3000 --files 'public/**/*, views/**/*.ejs'"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "axios": "^1.13.5",
     "connect-livereload": "^0.6.1",
     "ejs": "^4.0.1",
     "express": "^5.2.1",
