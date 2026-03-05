@@ -1,0 +1,63 @@
+
+
+  
+        <table style="width: 95%;"
+          class="mt-5 mx-auto  table table-dark table-striped  table-bordered border-primary text-center  ">
+          <thead>
+            <tr >
+              <th scope="col">#</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Country</th>
+              <th scope="col">Age</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <% users.forEach(function(item,index){ %>
+              <th scope="row"><%= index+1 %></th>
+              <td><%= item.First_Name %>  <%= item.Last_Name %></td>
+              <td><%= item.Email %></td>
+              <td><%= item.gender %></td>
+              <td><%= item.Country %></td>
+              <td><%= item.Age %></td>
+              <td><%= item.Mobile_Number %></td>
+              <td><%= item.display_date%></td>
+              
+              
+              <td>
+                <div
+                  class="d-flex justify-content-center align-items-center gap-2">
+                  <!-- <a href="/view/<%= item.id %>" data-bs-toggle="modal" data-bs-target="#usermodal" data-user="<%= JSON.stringify(item) %>" data-bs-title="Default modal" ><i class="bi bi-arrows-fullscreen" ></i></a> -->
+                  <a href="/edit/<%= item.id %>"><i class="bi bi-pencil"></i></a>
+                 <form action="/deleteUser/<%= item.id %>" method="POST" style="display:inline;" onsubmit="return confirm('هل أنتِ متأكدة من حذف هذا المستخدم؟');">
+    <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
+        <i class="bi bi-person-x text-danger"></i>
+    </button>
+</form>
+                </div>
+              </td>
+            </tr>
+            <%  }); %>
+
+    </tbody>
+</table>
+
+<!-- <div class="modal fade" id="usermodal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-dark text-light border-secondary">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title">User Data</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+    </div>
+  </div>
+</div> -->
+    

@@ -1,16 +1,28 @@
 {
   "name": "project-node-js",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "browser-sync start --proxy http://localhost:3000 --files 'public/**/*, views/**/*.ejs'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.2.1"
+    "axios": "^1.13.5",
+    "connect-livereload": "^0.6.1",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "livereload": "^0.10.3",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.1.5",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.16.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
   }
 }
