@@ -1,29 +1,26 @@
-<table class="table table-striped-columns mt-5 " style="width: 90% ; margin: 0 auto; ">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
- <tbody>
-            <tr>
-              
-              <th scope="row"><%= users.id %></th>
-              <td><%= users.First_Name %>  <%= users.Last_Name %></td>
-              <td><%= users.gender %></td>
-              <td><%= users.Country %></td>
-              <td><%= users.Age %></td>
-              <td><%= users.display_date%></td>
-              
-              
-              <td>
-              
-              </td>
-            </tr>
-           
-
-          </tbody>
-        </table>
-</table>
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-6 fw-bold">First Name:</div>
+        <div class="col-6"><%= item.First_Name %></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-6 fw-bold">Last Name:</div>
+        <div class="col-6"><%= item.Last_Name %></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-6 fw-bold">Email:</div>
+        <div class="col-6"><%= item.Email %></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-6 fw-bold">Age:</div>
+        <div class="col-6"><%= item.Age %></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-6 fw-bold">Country:</div>
+        <div class="col-6"><%= item.Country %></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-6 fw-bold">Gender:</div>
+        <div class="col-6"><%= item.gender %></div>
+    </div>
+</div>

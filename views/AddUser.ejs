@@ -1,1 +1,4 @@
-<%- include("Form"),{isEdit:false} %>
+<%- include("Form", { 
+    isEdit: typeof isEdit !== 'undefined' ? isEdit : false, 
+    user: typeof user !== 'undefined' ? user : null 
+}) %>

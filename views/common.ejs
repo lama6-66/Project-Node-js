@@ -204,13 +204,7 @@
       <!--  هذا الجزء الايسر   -->
       <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary"
         style="width: 4.5rem">
-        <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none"
-          title="Icon-only" data-bs-toggle="tooltip" data-bs-placement="right">
-          <svg class="bi pe-none" width="40" height="32" aria-hidden="true">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-          <span class="visually-hidden">Icon-only</span>
-        </a>
+       <i class="bi bi-database-fill-gear" style="font-size: 40px; display: flex; justify-content: center; align-items: center; margin: 10px;"></i>
         <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
           <li class="nav-item">
             <a href="/" class="nav-link active py-3 border-bottom rounded-0"
@@ -272,19 +266,7 @@
           </li> -->
         </ul>
         <div class="dropdown border-top">
-          <a href="#"
-            class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="24"
-              height="24" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small shadow">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
+         
         </div>
       </div>
 
@@ -299,7 +281,8 @@
         <nav class="navbar bg-body-tertiary">
           <div
             class="container-fluid justify-content-center justify-content-md-between">
-            <a class="navbar-brand">Navbar</a>
+            <a class="navbar-brand">Users Data Management
+</a>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search"
                 placeholder="Search" aria-label="Search" />
@@ -314,7 +297,11 @@
         </div>
        
       </div> -->
-<%- include(body, { countries: typeof countries !== 'undefined' ? countries : [] }) %>
+<%- include(body, { 
+    isEdit: typeof isEdit !== 'undefined' ? isEdit : false, 
+    user: typeof user !== 'undefined' ? user : { First_Name: '', Last_Name: '', Email: '', MobileNumber: '', Age: '', Country: '', Gender: '' }, 
+    countries: typeof countries !== 'undefined' ? countries : [] 
+}) %>
 
     </main>
     <script src="../public/bootstrap.bundle.min.js"
