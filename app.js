@@ -12,6 +12,8 @@ import { DeleteUser } from "./models/mydataSchema.js";
 import { SearchUser } from "./models/mydataSchema.js";
 import { UpdateUser } from "./models/mydataSchema.js";
 import { getCountriesList } from "./models/mydataSchema.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -25,10 +27,14 @@ app.set("/views", path.join(__dirname, "/views"));
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "ReemSafar66$$",
-  database: "user",
+  host: process.env.DB_Host,
+        user: process.env.DB_User,
+        password: process.env.DB_Password,
+        port:parseInt(process.env.DB_Port) ,
+        database: process.env.DB_Name,
+         ssl:{
+            rejectUnauthorized: false
+        }
 });
 
 connection.connect((error) => {
